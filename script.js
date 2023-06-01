@@ -168,11 +168,11 @@ function Esquerda() {
   }
 }
 
-function pesquisaid() {
-  const numero_do_id = document.getElementById("iddapesquisa").value;
-  console.log(numero_do_id);
+function pesquisaID() {
+  const numeroDoID = document.getElementById("iddapesquisa").value;
+  console.log(numeroDoID);
 
-  buscarProdutosInicial3(numero_do_id);
+  buscarProdutosInicial3(numeroDoID);
 }
 
 function BuscarCategory() {
