@@ -148,7 +148,7 @@ function AdcionarAoDom(Produtos) {
     // Adiciona o evento de clique ao card
     CardProduto.addEventListener("click", () => {
       // Redireciona para a página de detalhes do card
-      window.location.href = `detalhes_produto.html?id=${element.id}`;
+      window.location.href = `pagina_detalhes.html?id=${element.id}`;
     });
 
     pagina.appendChild(CardProduto);
@@ -222,7 +222,7 @@ function BuscarCategory() {
         // Adiciona o evento de clique ao card
         cardElement.addEventListener("click", () => {
           // Redireciona para a página de detalhes do card
-          window.location.href = `detalhes_produto.html?id=${VariavelDoForEach.id}`;
+          window.location.href = `pagina_detalhes.html?id=${VariavelDoForEach.id}`;
         });
 
         // Adiciona o card à página

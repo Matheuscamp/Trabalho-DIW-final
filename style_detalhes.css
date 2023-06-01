@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(189, 189, 189);
+}
+
+.di_detalhes img {
+  max-width: 300px;
+}
+.di_detalhes h3 {
+  font-size: 40px;
+}
+.di_detalhes p {
+  padding: 20px;
+  font-size: 18px;
+}
+
+.di_detalhes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  box-shadow: 10px 10px 10px;
+  border-radius: 10px;
+  grid-area: produto;
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+}
+.cor_do_preco {
+  color: rgb(65, 42, 165);
+}
+.Detalhes {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "cabecahvolta cabecah1 cabecah1"
+    "produto produto produto";
+}
+.cabeçalho_h1 {
+  grid-area: cabecah1;
+  align-items: center;
+  text-align: start;
+  margin-left: 200px;
+}
+.cabeçalho_volta {
+  grid-area: cabecahvolta;
+  display: flex;
+  align-items: center;
+}
+.Detalhes button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.cabeçalho_volta img {
+  max-width: 30px;
+}
