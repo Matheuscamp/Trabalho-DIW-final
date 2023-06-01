@@ -1,19 +1,17 @@
 var page = 1;
 
-function BuscarprodsInicial(parametro) {
-  const json_do_js = [];
-  const numerodapag = document.getElementById("Numpag");
+function buscarProdutosInicial(parametro) {
+  const arrayJs = [];
+  const numerodapag = document.getElementById("numeroPagina");
   numerodapag.innerHTML = page;
 
   fetch(`http://diwserver.vps.webdock.cloud:8765/products?${parametro}`)
     .then((response) => response.json())
     .then((data) => {
-      //reecbe o data e paga apenas o elemento produtos da api
       const produtos = data.products;
 
-      //faz um for dentro de cada produto e adciona ao objeto produtos_do_for
       produtos.forEach((element) => {
-        const produtos_do_for = {
+        const produtosFor = {
           id: element.id,
           title: element.title,
           price: element.price,
@@ -30,31 +28,28 @@ function BuscarprodsInicial(parametro) {
           displayCategories: element.displayCategories,
           category: element.category,
         };
-        //Adiona os produtos do for dentro da
-        json_do_js.push(produtos_do_for);
+        arrayJs.push(produtosFor);
       });
-      AdcionarAoDom(json_do_js);
+      adicionarAoDom(arrayJs);
     })
     .catch((error) => {
       console.error("Ocorreu um erro:", error);
     });
 }
 
-function BuscarprodsInicial2(parametro) {
-  const json_do_js = [];
+function buscarProdutosInicial2(parametro) {
+  const arrayJs = [];
   page = 1;
-  const numerodapag = document.getElementById("Numpag");
+  const numerodapag = document.getElementById("numeroPagina");
   numerodapag.innerHTML = page;
 
   fetch(`http://diwserver.vps.webdock.cloud:8765/products?${parametro}`)
     .then((response) => response.json())
     .then((data) => {
-      //reecbe o data e paga apenas o elemento produtos da api
       const produtos = data.products;
 
-      //faz um for dentro de cada produto e adciona ao objeto produtos_do_for
       produtos.forEach((element) => {
-        const produtos_do_for = {
+        const produtosFor = {
           id: element.id,
           title: element.title,
           price: element.price,
@@ -71,26 +66,25 @@ function BuscarprodsInicial2(parametro) {
           displayCategories: element.displayCategories,
           category: element.category,
         };
-        //Adiona os produtos do for dentro da
-        json_do_js.push(produtos_do_for);
+        arrayJs.push(produtosFor);
       });
-      AdcionarAoDom(json_do_js);
+      adicionarAoDom(arrayJs);
     })
     .catch((error) => {
       console.error("Ocorreu um erro:", error);
     });
 }
 
-function BuscarprodsInicial3(parametro) {
-  const json_do_js = [];
+function buscarProdutosInicial3(parametro) {
+  const arrayJs = [];
   page = 1;
-  const numerodapag = document.getElementById("Numpag");
+  const numerodapag = document.getElementById("numeroPagina");
   numerodapag.innerHTML = page;
 
   fetch(`http://diwserver.vps.webdock.cloud:8765/products/${parametro}`)
     .then((response) => response.json())
     .then((data) => {
-      const produtos_do_for = {
+      const produtosFor = {
         id: data.id,
         title: data.title,
         price: data.price,
@@ -107,16 +101,15 @@ function BuscarprodsInicial3(parametro) {
         displayCategories: data.displayCategories,
         category: data.category,
       };
-      //Adiona os produtos do for dentro da
-      json_do_js.push(produtos_do_for);
-      AdcionarAoDom(json_do_js);
+      arrayJs.push(produtosFor);
+      adicionarAoDom(arrayJs);
     })
     .catch((error) => {
       console.error("Ocorreu um erro:", error);
     });
 }
 
-function AdcionarAoDom(Produtos) {
+function adicionarAoDom(Produtos) {
   const pagina = document.getElementById("prods");
   pagina.innerHTML = "";
 
@@ -145,9 +138,7 @@ function AdcionarAoDom(Produtos) {
     CardProduto.appendChild(titulo);
     CardProduto.appendChild(preço);
 
-    // Adiciona o evento de clique ao card
     CardProduto.addEventListener("click", () => {
-      // Redireciona para a página de detalhes do card
       window.location.href = `pagina_detalhes.html?id=${element.id}`;
     });
 
@@ -159,8 +150,8 @@ function Direita() {
   page += 1;
   console.log(page);
 
-  BuscarprodsInicial(`page=${page}`);
-  const numerodapag = document.getElementById("Numpag");
+  buscarProdutosInicial(`page=${page}`);
+  const numerodapag = document.getElementById("numeroPagina");
   numerodapag.innerHTML = page;
 }
 
@@ -171,8 +162,8 @@ function Esquerda() {
     page -= 1;
     console.log(page);
 
-    BuscarprodsInicial(`page=${page}`);
-    const numerodapag = document.getElementById("Numpag");
+    buscarProdutosInicial(`page=${page}`);
+    const numerodapag = document.getElementById("numeroPagina");
     numerodapag.innerHTML = page;
   }
 }
@@ -181,7 +172,7 @@ function pesquisaid() {
   const numero_do_id = document.getElementById("iddapesquisa").value;
   console.log(numero_do_id);
 
-  BuscarprodsInicial3(numero_do_id);
+  buscarProdutosInicial3(numero_do_id);
 }
 
 function BuscarCategory() {
@@ -195,7 +186,6 @@ function BuscarCategory() {
       const produtos_Category = data.products;
 
       produtos_Category.forEach((VariavelDoForEach) => {
-        // Cria os elementos HTML para cada produto
         const cardElement = document.createElement("div");
         cardElement.classList.add("card");
 
@@ -213,19 +203,15 @@ function BuscarCategory() {
         idElement.textContent = `ID: ${VariavelDoForEach.id}`;
         idElement.classList.add("Id-card");
 
-        // Adiciona os elementos ao card
         cardElement.appendChild(idElement);
         cardElement.appendChild(imageElement);
         cardElement.appendChild(titleElement);
         cardElement.appendChild(priceElement);
 
-        // Adiciona o evento de clique ao card
         cardElement.addEventListener("click", () => {
-          // Redireciona para a página de detalhes do card
           window.location.href = `pagina_detalhes.html?id=${VariavelDoForEach.id}`;
         });
 
-        // Adiciona o card à página
         limparTela.appendChild(cardElement);
       });
     })

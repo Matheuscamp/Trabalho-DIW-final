@@ -1,8 +1,6 @@
-// Obtém o ID do produto da URL
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id");
 
-// Busca os detalhes do produto com base no ID
 fetch(`http://diwserver.vps.webdock.cloud:8765/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {

@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
-  <body onload="BuscarprodsInicial()">
+  <body onload="buscarProdutosInicial()">
     <header class="section-header">
-      <button class="botao-header" onclick="BuscarprodsInicial2()">
+      <h1 class="title-header">DIW - Store</h1>
+      <button class="botao-header" onclick="buscarProdutosInicial2()">
         <img class="icon-header" src="./imgs/store-front.png" alt="logo" />
       </button>
-      <h1 class="title-header">DIW - Store</h1>
       <img
         class="icon-header"
         src="./imgs/carrinho-de-compras.png"
@@ -22,6 +22,21 @@
     </header>
     <section>
       <div class="container-pesquisa">
+        <div class="pesquisar">
+          <input
+            type="text"
+            class="pesquisainput"
+            id="iddapesquisa"
+            placeholder="Pesquise por ID"
+          />
+          <input
+            class="botao-pesquisar-text"
+            type="button"
+            value="Pesquisar"
+            onclick="pesquisaid()"
+            class="btn"
+          />
+        </div>
         <div class="category">
           <select class="select-category" name="opções" id="Seleção">
             <option value="Accessories - Accessories">
@@ -99,30 +114,15 @@
             />
           </button>
         </div>
-        <div class="pesquisar">
-          <input
-            type="text"
-            class="pesquisainput"
-            id="iddapesquisa"
-            placeholder="Pesquise por ID"
-          />
-          <input
-            class="botao-pesquisar-text"
-            type="button"
-            value="Pesquisar"
-            onclick="pesquisaid()"
-            class="btn"
-          />
-        </div>
-        <div class="Setas">
-          <img src="./imgs/seta-esquerda.png" onclick="Esquerda()" />
-          <label class="contador-pagina"
-            >PAGINA <span id="Numpag"></span
-          ></label>
-          <img src="./imgs/seta-direita.png" onclick="Direita()" />
-        </div>
       </div>
       <div class="produtos" id="prods"></div>
+      <div class="Setas">
+        <img src="./imgs/seta-esquerda.png" onclick="Esquerda()" />
+        <label class="contador-pagina"
+          >PAGINA <span id="numeroPagina"></span
+        ></label>
+        <img src="./imgs/seta-direita.png" onclick="Direita()" />
+      </div>
     </section>
     <footer>
       <div class="minhas-infos">
