@@ -5,7 +5,7 @@ function buscarProdutosInicial(parametro) {
   const numerodapag = document.getElementById("numeroPagina");
   numerodapag.innerHTML = page;
 
-  fetch(`http://diwserver.vps.webdock.cloud:8765/products?${parametro}`)
+  fetch(`https://diwserver.vps.webdock.cloud/products?${parametro}`)
     .then((response) => response.json())
     .then((data) => {
       const produtos = data.products;
@@ -43,7 +43,7 @@ function buscarProdutosInicial2(parametro) {
   const numerodapag = document.getElementById("numeroPagina");
   numerodapag.innerHTML = page;
 
-  fetch(`http://diwserver.vps.webdock.cloud:8765/products?${parametro}`)
+  fetch(`https://diwserver.vps.webdock.cloud/products?${parametro}`)
     .then((response) => response.json())
     .then((data) => {
       const produtos = data.products;
@@ -81,7 +81,7 @@ function buscarProdutosInicial3(parametro) {
   const numerodapag = document.getElementById("numeroPagina");
   numerodapag.innerHTML = page;
 
-  fetch(`http://diwserver.vps.webdock.cloud:8765/products/${parametro}`)
+  fetch(`https://diwserver.vps.webdock.cloud/products/${parametro}`)
     .then((response) => response.json())
     .then((data) => {
       const produtosFor = {
@@ -180,7 +180,7 @@ function BuscarCategory() {
   const limparTela = document.getElementById("prods");
   limparTela.innerHTML = "";
 
-  fetch(`http://diwserver.vps.webdock.cloud:8765/products/category/${category}`)
+  fetch(`https://diwserver.vps.webdock.cloud/products/category/${category}`)
     .then((response) => response.json())
     .then((data) => {
       const produtos_Category = data.products;
@@ -219,3 +219,4 @@ function BuscarCategory() {
       console.error("Ocorreu um erro:", error);
     });
 }
+
