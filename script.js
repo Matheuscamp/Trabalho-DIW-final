@@ -219,4 +219,3 @@ function BuscarCategory() {
       console.error("Ocorreu um erro:", error);
     });
 }
-
