@@ -4,6 +4,8 @@ Trabalho da Faculdade. Matéria: DESENVOLVIMENTO DE INTERFACES WEB
 
 Portal de eCommerce integrado com a Fake Store API
 
+<img src="./imgs/preview-Trabalho-Diw-Final.png">
+
 ## Live link:
 
 https://matheuscamp.github.io/Trabalho-DIW-final/
